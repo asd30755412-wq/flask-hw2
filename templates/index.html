@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠能與科技專案筆記</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f4f7f9;
+            color: #2c3e50;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: #1f4e79;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #6c7a89;
+            margin-top: 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border-left: 6px solid #2e75b6;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e8f1f8;
+            color: #1f4e79;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .card h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.35rem;
+            color: #1a252f;
+        }
+        .card p {
+            margin: 0;
+            line-height: 1.65;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ 綠能與科技專案筆記</h1>
+            <p>使用 Python Flask 與 Jinja2 Templates 動態渲染</p>
+        </header>
+
+        {% for post in posts %}
+        <article class="card">
+            <span class="badge">技術領域：{{ post.category }}</span>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</body>
+</html>
